@@ -1,4 +1,4 @@
-leaSuperpower.destroy_all
+Superpower.destroy_all
 User.destroy_all
 
 user = User.create!(email: "first-user@onepunchman.com", password: 123456)
