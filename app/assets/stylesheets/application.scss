@@ -10,4 +10,6 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/_card";
+
+// Other global/constant CSS settings that should stay the same throughout the project
+@import "config/global"
