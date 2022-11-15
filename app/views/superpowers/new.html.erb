@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="form-container">
+    <h2>Add a superpower for rent</h2>
+    <%= simple_form_for(@superpower) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :category, as: :select, collection: Superpower::CATEGORIES.map { |c| [c.capitalize, c] } %>
+      <%= f.input :price_per_day %>
+      <%= f.input :listed, label: "For rent right now?", as: :radio_buttons, required: true %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+  <%= link_to "Back", superpowers_path %>
+</div>
