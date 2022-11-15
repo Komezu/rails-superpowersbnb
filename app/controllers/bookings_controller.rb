@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
 
   def my_bookings
     @bookings_as_rentee = Bookings.where(user: current_user)
-    @bookings_as_rentor = Bookings.where()
+    # @bookings_as_rentor = Bookings.where
   end
 
   def show
