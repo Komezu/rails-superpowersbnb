@@ -1,7 +1,7 @@
 <h1>Booking Details</h1>
 
 <div class="cards">
-  <p><%= "Superpower ID: link_to #{@booking.superpower_id}, "%></p>
+  <p><%= "Superpower ID: "%><%= link_to "#{@booking.superpower_id}", "/superpower_path" %></p>
   <p><%= "Created at: #{@booking.created_at.strftime("%A, %d %b %Y %l:%M %p")}"%></p>
   <p><%= "Updated at: #{@booking.updated_at.strftime("%A, %d %b %Y %l:%M %p")}"%></p>
 </div>
