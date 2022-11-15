@@ -13,12 +13,9 @@ class BookingsController < ApplicationController
     end
   end
 
-  def index
-    @bookings = Booking.all
-  end
-
   def my_bookings
-    @bookings = Booking.all
+    @bookings_as_rentee = Bookings.where(user: current_user)
+    @bookings_as_rentor = Bookings.where()
   end
 
   def show
