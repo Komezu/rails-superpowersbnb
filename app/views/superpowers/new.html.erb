@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="form-container">
+    <h2>Add a superpower for rent</h2>
+    <%= simple_form_for(@superpower) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :category %>
+      <%= f.input :price_per_day %>
+      <%= f.input :listed %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+  <%= link_to "Back", superpowers_path %>
+</div>
