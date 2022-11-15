@@ -1,6 +1,6 @@
 class SuperpowersController < ApplicationController
   skip_before_action :authenticate_user!, only: %w[index show]
-  before_action :set_superpower, only: :edit
+  before_action :set_superpower, only: %w[edit update]
 
   def index
     if params[:q].nil?
@@ -25,6 +25,10 @@ class SuperpowersController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+
   end
 
   def my_superpowers
