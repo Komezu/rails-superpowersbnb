@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :superpowers, only: %w[index new create]
+  resources :superpowers, only: %i[index show new create]
+  resources :bookings, only: %i[new create]
 
   get '/my_superpowers', to: 'superpowers#my_superpowers'
+
+  resources :bookings, only: %w[index show]
 end
