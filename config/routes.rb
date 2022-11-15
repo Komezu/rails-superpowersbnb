@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   get '/my_superpowers', to: 'superpowers#my_superpowers'
 
-  resources :bookings, only: %w[index show]
+  resources :bookings, only: %w[index]
+  get '/my_bookings', to: 'bookings#my_bookings'
+  get '/my_bookings/:id', to: 'bookings#show', as: :my_booking_details
 end

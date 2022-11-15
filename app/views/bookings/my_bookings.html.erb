@@ -6,7 +6,7 @@
       <%= booking.start_date %>
       <%= booking.end_date %>
       <%= booking.status.capitalize %>
-      <%= link_to booking.superpower.name, booking_path(booking) %>
+      <%= link_to booking.superpower.name, my_booking_details_path(booking) %>
     </div>
   <% end %>
 </div>
