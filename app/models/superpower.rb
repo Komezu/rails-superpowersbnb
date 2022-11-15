@@ -6,5 +6,6 @@ class Superpower < ApplicationRecord
   validates :description, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :price_per_day, presence: true, numericality: { only_integer: true, minimum: 1 }
+  validates :listed, inclusion: [true, false]
   validates :user, presence: true
 end
