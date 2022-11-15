@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <%= link_to "SuperPowerBnb", superpowers_path, class: "navbar-brand" %>
     <form action="/superpowers" class="d-flex">
-      <input name="query" class="form-control me-2" type="search" placerholder="Look up a superpower"></input>
+      <input name="q" class="form-control me-2" type="search" placerholder="Look up a superpower"></input>
       <input type="submit" class="btn btn-outline-warning" value="Search"></input>
     </form>
     <%= link_to "Add a superpower", new_superpower_path %>
