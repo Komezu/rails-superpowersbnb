@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
       render :new, status: 422
     end
   end
-  
+
   def index
     @bookings = Booking.all
   end
