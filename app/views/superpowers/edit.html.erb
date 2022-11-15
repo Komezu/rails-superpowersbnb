@@ -1,7 +1,7 @@
 <div class="container">
   <div class="form-container">
     <h2>Modify this superpower</h2>
-    <%= simple_form_for(@superpower) do |f| %>
+    <%= simple_form_for(@superpower, url: update_superpower_path(@superpower)) do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :category, as: :select, collection: Superpower::CATEGORIES.map { |c| [c.capitalize, c] } %>

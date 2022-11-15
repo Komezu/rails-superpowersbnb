@@ -1,6 +1,6 @@
 class SuperpowersController < ApplicationController
   skip_before_action :authenticate_user!, only: %w[index show]
-  before_action :set_superpower, only: %w[edit update]
+  before_action :set_superpower, only: %w[edit update destroy toggle_availability]
 
   def index
     if params[:q].nil?
@@ -31,12 +31,30 @@ class SuperpowersController < ApplicationController
   def edit
   end
 
-  def update
+  def destroy
+    @superpower.destroy
+    redirect_to my_superpowers_path, status: :see_other
+  end
 
+  def update
+    if @superpower.update(superpower_params)
+      redirect_to superpower_path(@superpower)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def my_superpowers
     @superpowers = Superpower.where(user: current_user)
+  end
+
+  def toggle_availability
+    if @superpower.listed
+      @superpower.update(listed: false)
+    else
+      @superpower.update(listed: true)
+    end
+    redirect_to my_superpowers_path
   end
 
   private

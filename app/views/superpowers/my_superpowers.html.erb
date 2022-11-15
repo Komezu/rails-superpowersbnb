@@ -5,10 +5,18 @@
   <div class="cards">
     <% @superpowers.each do |superpower| %>
       <div class="card-category">
-        <%= superpower.name %>
+        <%= link_to superpower.name, superpower_path(superpower) %>
         <%= superpower.category.capitalize %>
         <%= superpower.price_per_day %>
+        <%= link_to(toggle_availability_path(superpower)) do %>
+          <% if superpower.listed %>
+            <i class="fa-solid fa-square-check"></i> listed for renting
+          <% else %>
+            <i class="fa-solid fa-square-xmark"></i> unlisted
+          <% end %>
+        <% end %>
         <%= link_to "Edit", edit_superpower_path(superpower) %>
+        <%= link_to "Delete", superpower_path(superpower), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
     <% end %>
   </div>
