@@ -1,5 +1,6 @@
 class SuperpowersController < ApplicationController
   skip_before_action :authenticate_user!, only: %w[index show]
+  before_action :set_superpower, only: :edit
 
   def index
     @superpowers = Superpower.all
@@ -19,11 +20,18 @@ class SuperpowersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def my_superpowers
     @superpowers = Superpower.where(user: current_user)
   end
 
   private
+
+  def set_superpower
+    @superpower = Superpower.find(params[:id])
+  end
 
   def superpower_params
     params.require(:superpower).permit(:name, :description, :category, :price_per_day, :listed)

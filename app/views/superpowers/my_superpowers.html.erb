@@ -6,8 +6,9 @@
     <% @superpowers.each do |superpower| %>
       <div class="card-category">
         <%= superpower.name %>
-        <%= superpower.category %>
+        <%= superpower.category.capitalize %>
         <%= superpower.price_per_day %>
+        <%= link_to "Edit", edit_superpower_path(superpower) %>
       </div>
     <% end %>
   </div>
