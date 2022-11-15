@@ -11,9 +11,9 @@
   </head>
 
   <body>
+    <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="navbar-spacer"></div>
     <%= yield %>
   </body>
 </html>
