@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :superpowers, :bookings
+  has_many :superpowers
+  has_many :bookings
   validates :username, presence: true, uniqueness: true, length: { maximum: 15 }
 end

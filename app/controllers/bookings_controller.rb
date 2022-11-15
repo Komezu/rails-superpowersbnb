@@ -14,8 +14,8 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    @bookings_as_rentee = Bookings.where(user: current_user)
-    # @bookings_as_rentor = Bookings.where
+    @bookings_as_rentee = Booking.where(user: current_user)
+    @bookings_as_rentor = Booking.where(superpower: current_user.superpowers)
   end
 
   def show
