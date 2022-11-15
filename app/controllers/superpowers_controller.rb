@@ -2,7 +2,11 @@ class SuperpowersController < ApplicationController
   skip_before_action :authenticate_user!, only: %w[index show]
 
   def index
-    @superpowers = Superpower.all
+    if params[:q].nil?
+      @superpowers = Superpower.all
+    else
+      @superpowers = Superpower.where("name LIKE ?", "%" + params[:q] + "%")
+    end
   end
 
   def show
