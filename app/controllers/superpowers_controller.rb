@@ -5,10 +5,10 @@ class SuperpowersController < ApplicationController
     @superpowers = Superpower.all
   end
 
-<<<<<<< HEAD
   def show
     @superpower = Superpower.find(params[:id])
-=======
+  end
+
   def new
     @superpower = Superpower.new
   end
@@ -31,6 +31,5 @@ class SuperpowersController < ApplicationController
 
   def superpower_params
     params.require(:superpower).permit(:name, :description, :category, :price_per_day, :listed)
->>>>>>> master
   end
 end
