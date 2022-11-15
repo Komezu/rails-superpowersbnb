@@ -4,14 +4,7 @@ Booking.destroy_all
 
 user = User.create!(email: "first-user@onepunchman.com", username: "test-user", password: 123456)
 
-Superpower.create!([{
-  name: "Eat 100 burgers",
-  description: "Want to splurge on burgers but feel too full too fast? Get the ability to eat all the burgers you want.",
-  category: "superhuman",
-  price_per_day: 1200,
-  listed: true,
-  user:
-},
+Superpower.create!([
 {
   name: "Sleep with eyes open",
   description: "Tired of being called out in class or your job? Get the ability to sleep with your eyes open!",
@@ -54,3 +47,23 @@ Superpower.create!([{
 }])
 
 p "Created #{Superpower.count} Superpowers"
+
+superpower = Superpower.create!({
+  name: "Eat 100 burgers",
+  description: "Want to splurge on burgers but feel too full too fast? Get the ability to eat all the burgers you want.",
+  category: "superhuman",
+  price_per_day: 1200,
+  listed: true,
+  user:
+})
+
+rentee = User.create!(email: "first-rentee@onepunchman.com", username: "test-rentee", password: 123456)
+Booking.create!({
+  start_date: Date.today,
+  end_date: Date.today + 3,
+  status: "accepted",
+  superpower: superpower,
+  user: rentee
+})
+
+p "Created #{Booking.count} Booking(s)"

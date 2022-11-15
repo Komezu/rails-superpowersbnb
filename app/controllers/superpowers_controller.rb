@@ -3,7 +3,11 @@ class SuperpowersController < ApplicationController
   before_action :set_superpower, only: :edit
 
   def index
-    @superpowers = Superpower.all
+    if params[:q].nil?
+      @superpowers = Superpower.all
+    else
+      @superpowers = Superpower.where("name LIKE ?", "%" + params[:q] + "%")
+    end
   end
 
   def new
