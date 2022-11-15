@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>My superpowers</h2>
+
+
+  <div class="cards">
+    <% @superpowers.each do |superpower| %>
+      <div class="card-category">
+        <%= superpower.name %>
+        <%= superpower.category %>
+        <%= superpower.price_per_day %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Back", superpowers_path %>
+</div>
