@@ -1,1 +1,39 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: Impact, Charcoal, sans-serif;
+  letter-spacing: 2px;
+  font-size: 40px;
+  font-weight: 200
+}
+
+.banner p {
+  font-family:Impact, Charcoal, sans-serif;
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner a {
+  color: #F7B538;
+  border-radius: 8px;
+  justify-content: center;
+  font-family:Impact, Charcoal, sans-serif;
+  font-weight: 100;
+}
+
+.banner a :hover{
+  color: #F7B538;
+}
