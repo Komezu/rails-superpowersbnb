@@ -5,3 +5,18 @@ $navbar-height: 56px;
 .navbar-spacer {
   height: $navbar-height;
 }
+
+.container {
+  width: 1200px;
+  margin: 10px auto;
+}
+
+h1 {
+  margin: 25px;
+  text-align: center;
+  color: black;
+}
+
+body {
+  background-color: #e78e3a;
+}

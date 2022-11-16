@@ -38,13 +38,45 @@ Superpower.create!([
   user:
 },
 {
+  name: "Teleportation",
+  description: "Late for a meeting? Get the ability to teleport - one time use only!",
+  category: "superhuman",
+  price_per_day: 10000,
+  listed: false,
+  user:
+},
+{
+  name: "X-Ray Vision",
+  description: "Are you a doctor but slept throughout your X-ray lessons? Get the ability to scan people fast.",
+  category: "superhuman",
+  price_per_day: 5000,
+  listed: false,
+  user:
+},
+{
+  name: "Pyrokinetic",
+  description: "Feeling cold during the winter? Get the ability to be the HOT one in the room.",
+  category: "transformation",
+  price_per_day: 5000,
+  listed: false,
+  user:
+},
+{
   name: "Communicate with animals",
   description: "Always wanted to know what your pet is complaining about? Get this power to get rid of that language barrier and converse with them!",
   category: "others",
   price_per_day: 2000,
   listed: false,
   user:
-}])
+},
+{
+  name: "Code Whisperer",
+  description: "Stuck in a code? Get the ability to summon a code whisperer, a trump card, called Stephane.",
+  category: "others",
+  price_per_day: 9000,
+  listed: false,
+  user:
+},])
 
 p "Created #{Superpower.count} Superpowers"
 
