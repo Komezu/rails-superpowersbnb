@@ -58,12 +58,18 @@ superpower = Superpower.create!({
 })
 
 rentee = User.create!(email: "first-rentee@onepunchman.com", username: "test-rentee", password: 123456)
-Booking.create!({
+Booking.create!([{
   start_date: Date.today,
   end_date: Date.today + 3,
   status: "accepted",
   superpower: superpower,
   user: rentee
-})
+},
+{
+  start_date: Date.today,
+  end_date: Date.today + 10,
+  superpower: superpower,
+  user: rentee
+}])
 
 p "Created #{Booking.count} Booking(s)"
