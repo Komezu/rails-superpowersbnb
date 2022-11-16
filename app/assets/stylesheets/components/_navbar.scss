@@ -10,7 +10,7 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-
+// ---------------------------------------------------------------------------------------------------------
 .navbar-custom {
   background-color: $dirty-yellow;
   padding: 15px auto;
@@ -20,5 +20,18 @@
   a {
     display: inline-block;
     margin-left: 10px;
+
   }
+}
+
+#search-button {
+  background-color: $dirty-orange;
+  margin-left: -7px;
+  border-color: none;
+  border: 0;
+}
+
+.nav-item {
+  // border-radius: 8px;
+  padding: 10px;
 }
