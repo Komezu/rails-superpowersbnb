@@ -1,6 +1,6 @@
+Booking.destroy_all
 Superpower.destroy_all
 User.destroy_all
-Booking.destroy_all
 
 user = User.create!(email: "first-user@onepunchman.com", username: "test-user", password: 123456)
 
