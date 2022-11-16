@@ -111,7 +111,7 @@ GEM
     erubi (1.11.0)
     execjs (2.8.1)
     ffi (1.15.5)
-    font-awesome-sass (6.2.0)
+    font-awesome-sass (6.2.1)
       sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -146,8 +146,6 @@ GEM
       net-protocol
     nio4r (2.5.8)
     nokogiri (1.13.9-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.4)
@@ -245,7 +243,6 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
-  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
