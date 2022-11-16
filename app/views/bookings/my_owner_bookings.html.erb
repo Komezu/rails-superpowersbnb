@@ -1,12 +1,13 @@
 <div class="container">
-  <h4>RENTOR</h4>
+  <h2>Superpowers you've rented out</h2>
+
   <div class="cards">
-    <% @bookings_as_rentor.each do |booking| %>
+    <% @bookings.each do |booking| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+        <%= link_to booking.superpower.name, booking_path(booking) %>
         <%= booking.start_date %>
         <%= booking.end_date %>
         <%= booking.status.capitalize %>
-        <%= link_to booking.superpower.name, my_booking_details_path(booking) %>
       </div>
     <% end %>
   </div>
