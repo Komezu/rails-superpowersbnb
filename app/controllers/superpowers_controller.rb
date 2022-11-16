@@ -4,9 +4,9 @@ class SuperpowersController < ApplicationController
 
   def index
     if params[:q].nil?
-      @superpowers = Superpower.all
+      @superpowers = Superpower.where(listed: true)
     else
-      @superpowers = Superpower.where("name LIKE ?", "%" + params[:q] + "%")
+      @superpowers = Superpower.where("name LIKE ?", "%" + params[:q] + "%").where(listed: true)
     end
   end
 
