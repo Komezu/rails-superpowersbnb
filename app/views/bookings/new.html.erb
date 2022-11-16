@@ -1,12 +1,15 @@
 <div class = "container">
   <div class="form-container">
-    <h2>Book your superpower</h2>
-    <%= simple_form_for(@booking) do |f| %>
-      <%= f.input : %>
-      <%= f.input : %>
-      <%= f.input : %>
-      <%= f.input : %>
-
-
+    <h2 class= "m-5">Book your superpower</h2>
+    <%= simple_form_for [@superpower, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit class: "btn btn-outline-warning" %>
+    <% end %>
   </div>
+
+<%= link_to "Back", superpower_path(@superpower), class: "btn btn-outline-warning" %>
+
 </div>
+
+    <%# <p><%= @superpower.price_per_day * (end_date - start_date).to_i  %>
