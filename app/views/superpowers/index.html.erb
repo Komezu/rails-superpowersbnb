@@ -1,13 +1,17 @@
-<h1>List of Superpowers</h1>
-
-<div class="cards">
-  <% @superpowers.each do |superpower| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      <%= superpower.name %>
-      <%= superpower.category.capitalize %>
-      <%= superpower.price_per_day %>
-      <%= link_to "Learn more", superpower_path(superpower), class: "btn btn flat" %>
+<div class="container">
+  <h1>List of Superpowers 💥💫</h1>
+  <div class="cards">
+    <% @superpowers.each do |superpower| %>
+    <div class="card-trip <%= superpower.category %>">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <%= link_to superpower.name, superpower_path(superpower), class: "btn-flat" %>
+          <p>Category: <%= superpower.category.capitalize %></p>
+        </div>
+          <h3 class="card-trip-pricing"><%= superpower.price_per_day %></h3>
+      </div>
     </div>
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
