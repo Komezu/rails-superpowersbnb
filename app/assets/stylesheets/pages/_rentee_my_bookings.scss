@@ -32,6 +32,7 @@
   margin-bottom: 0;
   margin-top: 8px;
   float: left;
+  color: silver;
 
 }
 
@@ -51,15 +52,20 @@
 
 }
 
-.cards .card-trip-pricing {
+.cards .card-trip-status {
   color: $light-gray;
   // text-align: center;
   float: right;
 
 }
 
+.card-trip-infos {
+  border-radius: 20%;
+
+}
+
 #card-trip-name {
-  color: $light-gray;
+  color: $gray;
   // position: relative; top: -16px;
   float: left;
 
@@ -72,7 +78,7 @@
 // .power-price {
 // }
 
-.status-and-name, .date-and-btn {
+.price-and-name, .category-and-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;

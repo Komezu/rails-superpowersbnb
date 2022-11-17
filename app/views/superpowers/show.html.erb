@@ -1,15 +1,15 @@
  <%# will be changed later, just need to put something here %>
 
 <center>
-<div class="details">
-  <img src="https://tinyurl.com/all-white">
+<div class="details d-flex flex-column">
+  <img src="https://tinyurl.com/no-img-available" width="40px" >
   <div class="details-infos">
     <h1><%= @superpower.name %></h1>
     <h2><%= @superpower.category.capitalize %></h2>
     <p><%= @superpower.description %></p>
     <p><strong>$<%= @superpower.price_per_day %></strong></p>
   </div>
-  <%= link_to "Book this", new_superpower_booking_path(@superpower), class: "btn btn-outline-warning" %>
-  <%= link_to "Go back", superpowers_path, class: "btn btn-outline-warning" %>
+  <%= link_to "Book this", new_superpower_booking_path(@superpower), class: "btn btn-outline-dark" %>
+  <%= link_to "Go back", superpowers_path, class: "btn btn-outline-dark" %>
 </div>
 </center>

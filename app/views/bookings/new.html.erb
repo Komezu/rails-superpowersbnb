@@ -2,13 +2,13 @@
   <div class="form-container">
     <h2>Book <em><%= @superpower.name %></em></h2>
     <%= simple_form_for [@superpower, @booking] do |f| %>
-      <%= f.input :start_date, start_year: Date.today.year %>
-      <%= f.input :end_date, start_year: Date.today.year %>
-      <%= f.submit class: "btn btn-outline-warning" %>
+      <%= f.input :start_date, start_year: Date.today.year, html5: true %>
+      <%= f.input :end_date, start_year: Date.today.year, html5: true %>
+      <%= f.submit class: "btn btn-outline-dark" %>
     <% end %>
   </div>
 
-  <%= link_to "Back", superpower_path(@superpower), class: "btn btn-outline-warning" %>
+  <%= link_to "Back", superpower_path(@superpower), class: "btn btn-outline-dark" %>
 </div>
 
 <%# <p><%= @superpower.price_per_day * (end_date - start_date).to_i  %>

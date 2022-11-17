@@ -1,14 +1,21 @@
-<div class="container">
-  <h2>Superpowers you've booked</h2>
 
+<div class="container">
+  <h1>Booked Superpowers</h1>
   <div class="cards">
     <% @bookings.each do |booking| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-        <%= link_to booking.superpower.name, booking_path(booking) %>
-        <%= booking.start_date %>
-        <%= booking.end_date %>
-        <%= booking.status.capitalize %>
+    <div class="card-trip" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://tinyurl.com/grey-picture)">
+      <div class="card-trip-infos d-flex flex-column">
+        <div class="status-and-name">
+          <%# <%= link_to superpower.name, superpower_path(superpower), class: "btn-flat" %>
+          <h3 id="card-trip-name"><%=booking.superpower.name%></h3>
+          <h3 class="card-trip-status"><%= booking.status.capitalize %></h3>
+        </div>
+        <div class="date-and-btn">
+          <p><%= booking.start_date %> to <%= booking.end_date %></p>
+          <h3 class="card-trip-learn-more"><%= link_to "More info", booking_path(booking), class: "btn btn-dark btn-sm" %></h3>
+        </div>
       </div>
+    </div>
     <% end %>
   </div>
 </div>

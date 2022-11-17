@@ -1,17 +1,23 @@
 <div class="container">
-  <h1>List of Superpowers 💥💫</h1>
+  <h1>Superpowers 💥💫</h1>
   <div class="cards">
     <% @superpowers.each do |superpower| %>
     <div class="card-trip <%= superpower.category %>">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <%= link_to superpower.name, superpower_path(superpower), class: "btn-flat" %>
-          <p>Category: <%= superpower.category.capitalize %></p>
+      <div class="card-trip-infos d-flex flex-column">
+        <div class="price-and-name">
+          <%# <%= link_to superpower.name, superpower_path(superpower), class: "btn-flat" %>
+          <h3 id="card-trip-name"><%= superpower.name %></h3>
+          <h3 class="card-trip-pricing">$<%= superpower.price_per_day %></h3>
         </div>
-          <h3 class="card-trip-pricing"><%= superpower.price_per_day %></h3>
+        <div class="category-and-btn">
+          <p>Category: <%= superpower.category.capitalize %></p>
+          <h3 class="card-trip-learn-more"><%= link_to "Learn more", superpower_path(superpower), class: "btn btn-outline-dark btn-sm" %></h3>
+        </div>
       </div>
     </div>
     <% end %>
   </div>
 </div>
+
+<%# class="d-flex justify-content-between" %>
