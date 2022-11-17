@@ -24,8 +24,9 @@
         </li>
       </ul>
     </div>
-    <div class="ms-auto flex navbar-buttons">
+    <div class="ms-auto navbar-buttons">
       <% if user_signed_in? %>
+        <p><em>Logged in as </em><%= current_user.username %></p>
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-warning" %>
       <% else %>
         <%= link_to "Sign In", new_user_session_path, class: "btn btn-warning" %>
