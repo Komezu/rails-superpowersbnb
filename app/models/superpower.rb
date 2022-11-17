@@ -1,6 +1,7 @@
 class Superpower < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :photo
 
   CATEGORIES = %w(transformation superhuman elemental imperceptible others)
   validates :name, presence: true

@@ -4,9 +4,9 @@
     <%= simple_form_for(@superpower, url: update_superpower_path(@superpower)) do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
       <%= f.input :category, as: :select, collection: Superpower::CATEGORIES.map { |c| [c.capitalize, c] } %>
       <%= f.input :price_per_day %>
-      <%# f.input :listed, label: "For rent right now?", as: :radio_buttons, required: true %>
       <%= f.submit %>
     <% end %>
   </div>
