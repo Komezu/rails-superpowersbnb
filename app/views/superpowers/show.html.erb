@@ -1,8 +1,9 @@
  <%# will be changed later, just need to put something here %>
 
-<div class="card-product">
-  <img src="https://tinyurl.com/all-white " />
-  <div class="card-product-infos">
+<center>
+<div class="details">
+  <img src="https://tinyurl.com/all-white">
+  <div class="details-infos">
     <h1><%= @superpower.name %></h1>
     <h2><%= @superpower.category.capitalize %></h2>
     <p><%= @superpower.description %></p>
@@ -11,3 +12,4 @@
   <%= link_to "Book this", new_superpower_booking_path(@superpower), class: "btn btn-outline-warning" %>
   <%= link_to "Go back", superpowers_path, class: "btn btn-outline-warning" %>
 </div>
+</center>

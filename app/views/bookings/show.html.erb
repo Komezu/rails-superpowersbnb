@@ -1,7 +1,27 @@
-<h1>Booking Details</h1>
+<div class="container">
+  <h2>Booking Details</h2>
 
-<div class="cards">
-  <p>Superpower ID: <%= link_to "#{@booking.superpower_id}", "/superpower_path" %></p>
-  <p><%= "Created at: #{@booking.created_at.strftime("%A, %d %b %Y %l:%M %p")}"%></p>
-  <p><%= "Updated at: #{@booking.updated_at.strftime("%A, %d %b %Y %l:%M %p")}"%></p>
+  <p><%= @booking.superpower.name %> (owned by <%= @booking.superpower.user.username %>) was booked by <%= @booking.user.username %>!</p>
+  <p>From: <%= @booking.start_date %></p>
+  <p>To: <%= @booking.end_date %></p>
+  <p>Current status: <%= @booking.status.capitalize %></p>
+
+  <% if @booking.status == "pending" %>
+    <% if @user_is_power_owner %>
+      <%= link_to "Accept this booking", accept_booking_path(@booking) %>
+      <%= link_to "Decline this booking", decline_booking_path(@booking) %>
+    <% else %>
+      <%= link_to "Cancel this booking", cancel_booking_path(@booking) %>
+    <% end %>
+  <% end %>
+
+  <br>
+  <% if @user_is_power_owner %>
+    <%= link_to "Back", my_owner_bookings_path %>
+  <% else %>
+    <%= link_to "Back", my_bookings_path %>
+  <% end %>
 </div>
+
+<%# "Created at: #{@booking.created_at.strftime("%A, %d %b %Y %l:%M %p")}"%>
+<%# "Updated at: #{@booking.updated_at.strftime("%A, %d %b %Y %l:%M %p")}"%>
