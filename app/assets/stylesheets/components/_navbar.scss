@@ -10,17 +10,26 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
 // ---------------------------------------------------------------------------------------------------------
+
 .navbar-custom {
   background-color: $dirty-yellow;
   padding: 15px auto;
 }
 
 .navbar-buttons {
+  display: flex;
+  align-items: center;
+
   a {
     display: inline-block;
     margin-left: 10px;
+  }
 
+  p {
+    margin: 0;
+    padding: 0 5px;
   }
 }
 

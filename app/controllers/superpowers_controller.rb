@@ -1,6 +1,6 @@
 class SuperpowersController < ApplicationController
   skip_before_action :authenticate_user!, only: %w[index show]
-  before_action :set_superpower, only: %w[edit update destroy toggle_availability]
+  before_action :set_superpower, only: %w[show edit update destroy toggle_availability]
 
   def index
     if params[:q].nil?
@@ -20,7 +20,6 @@ class SuperpowersController < ApplicationController
   end
 
   def show
-    @superpower = Superpower.find(params[:id])
   end
 
   def new
@@ -73,6 +72,6 @@ class SuperpowersController < ApplicationController
   end
 
   def superpower_params
-    params.require(:superpower).permit(:name, :description, :category, :price_per_day, :listed)
+    params.require(:superpower).permit(:name, :description, :category, :price_per_day, :listed, :photo)
   end
 end

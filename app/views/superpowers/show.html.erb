@@ -2,7 +2,11 @@
 
 <center>
 <div class="details">
-  <img src="https://tinyurl.com/all-white">
+  <% if @superpower.photo.key %>
+    <%= cl_image_tag @superpower.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <%= image_tag "not_available.jpg", height: 300, width: 400 %>
+  <% end %>
   <div class="details-infos">
     <h1><%= @superpower.name %></h1>
     <h2><%= @superpower.category.capitalize %></h2>
@@ -10,6 +14,6 @@
     <p><strong>$<%= @superpower.price_per_day %></strong></p>
   </div>
   <%= link_to "Book this", new_superpower_booking_path(@superpower), class: "btn btn-outline-warning" %>
-  <%= link_to "Go back", superpowers_path, class: "btn btn-outline-warning" %>
+  <%= link_to "Go back", my_superpowers_path, class: "btn btn-outline-warning" %>
 </div>
 </center>
