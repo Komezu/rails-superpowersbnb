@@ -8,6 +8,15 @@ class SuperpowersController < ApplicationController
     else
       @superpowers = Superpower.where("name LIKE ?", "%" + params[:q] + "%").where(listed: true)
     end
+
+    @markers = @superpowers.geocoded.map do |superpower|
+      {
+        lat: superpower.latitude,
+        lng: superpower.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {superpower: superpower}),
+        image_url: helpers.asset_url("pow.png")
+      }
+    end
   end
 
   def show
