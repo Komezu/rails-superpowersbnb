@@ -1,0 +1,20 @@
+<div class="booking-form-container" data-controller="booking-form">
+  <h3>Book <em><%= superpower.name %></em></h3>
+
+  <%= simple_form_for [superpower, booking] do |f| %>
+    <p>Price per day: $<%= superpower.price_per_day %></p>
+
+    <%= f.input :start_date, start_year: Date.today.year, html5: true,
+        input_html: {data: {action: "change->booking-form#changeTotal", booking_form_target: "start"}} %>
+
+    <%= f.input :end_date, start_year: Date.today.year, html5: true,
+        input_html: {data: {action: "change->booking-form#changeTotal", booking_form_target: "end"}} %>
+
+    <%= f.input :price, as: :hidden,
+        input_html: {value: "#{superpower.price_per_day}", data: {booking_form_target: "price"}} %>
+
+    <p data-booking-form-target="total"></p>
+
+    <%= f.submit class: "btn btn-outline-warning" %>
+  <% end %>
+</div>
