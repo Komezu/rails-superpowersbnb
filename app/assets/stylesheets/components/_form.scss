@@ -1,0 +1,29 @@
+.booking-form-container {
+  width: 700px;
+  margin: 30px auto;
+  background-color: $dirty-yellow;
+  padding: 30px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
+
+  h3 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  .btn {
+    margin-top: 7px;
+  }
+
+  .total-price {
+    padding-top: 15px;
+    font-size: 20px;
+  }
+}
