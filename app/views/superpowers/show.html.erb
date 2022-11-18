@@ -7,7 +7,7 @@
         <div class="power-image">
           <div class="power-image-main">
             <% if @superpower.photo.key %>
-              <%= cl_image_tag @superpower.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag @superpower.photo.key, height: 480, width: 570, crop: :fill %>
             <% else %>
               <%= image_tag "not_available.jpg", height: 480, width: 570 %>
             <% end %>
