@@ -1,0 +1,136 @@
+.container{
+  display: flex;
+  position: relative;
+  align-items: stretch;
+  justify-content: center;
+  height: 100vh;
+}
+
+.row{
+  display: flex;
+  // gap: 20px;
+}
+
+.col-6{
+  // width: 50%;
+  flex: 50%;
+}
+
+.single-power{
+  // // width: 1000px;
+  // position: relative;
+  width: 1200px;
+  margin: 10px auto;
+}
+
+/** Breadcrumb **/
+
+.single-power .breadcrumb{
+  background: black;
+  padding: 8px 4px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.breadcrumb span{
+  display: inline-flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+
+.breadcrumb span a{
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/** power image **/
+
+.single-power .power-image{
+  width: 100%;
+}
+
+.power-image .power-image-main{
+  position: relative;
+  display: block;
+  height: 480px;
+  // background: var(--bg-grey);
+  padding: 10px;
+}
+
+.power-image-main img{
+  display: block;
+  // width: 100%;
+  // height: 100%;
+  object-fit: contain;
+}
+
+
+/** power price **/
+.power-price{
+  display: flex;
+  position: relative;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.power-price .offer-price{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+/** power Details **/
+.power-details{
+  margin: 10px 0;
+}
+.power-details h4{
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.7;
+}
+.power-details p{
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.2rem;
+}
+
+
+/** divider **/
+.divider{
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #48484830;
+  margin: 20px 0;
+}
+
+/** power Button Group **/
+
+.power-btn-select{
+  display: flex;
+  gap: 15px;
+}
+.power-btn-select .button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+}
+// .power-btn-group .btn-btn-dark{
+//   background-color: var(--accent-color);
+//   color: #fff;
+//   border: 1px solid var(--accent-color);
+//   border-radius: 4px;
+//   cursor: pointer;
+// }
+
+.power-btn-select .buy-now i{
+  font-size: 20px;
+}
+// .power-btn-group .buy-now:hover{
+//   box-shadow: 0 3px 6px var(--shadow);
+// }
