@@ -1,13 +1,14 @@
-.bookings-product {
+.superpowers-product {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 25px;
 }
 
-.bookings-product-card {
+.superpowers-product-card {
   height: 150px;
   display: flex;
   font-family: $body-font;
+  align-items: center;
   color: white;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -17,11 +18,11 @@
     margin: 5px;
   }
 
-  .booking-date {
+  .superpower-category {
     font-size: 15px;
   }
 
-  .booking-status {
+  .superpower-price {
     font-size: 12px;
   }
 }
@@ -37,14 +38,27 @@
   }
 }
 
-.bookings-details-card {
+#space-between {
+  margin-bottom: 30px;
+}
+
+.superpowers-details-card {
   margin-left: 20px;
-  padding-top: 5px;
 
   .superpower-name a {
     color: white;
     font-size: 18px;
     text-decoration: underline;
+  }
+}
+
+.card-links {
+  font-size: 13px;
+  display: flex;
+  justify-content: space-around;
+
+  a {
+    color: white;
   }
 }
 
