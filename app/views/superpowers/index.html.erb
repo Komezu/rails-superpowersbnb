@@ -5,7 +5,11 @@
     <div class="cards">
       <% @superpowers.each do |superpower| %>
       <div class="card-trip <%= superpower.category %>">
-      <%= cl_image_tag superpower.photo.key, height: 200 %>
+        <% if superpower.photo.key %>
+          <%= cl_image_tag superpower.photo.key, height: 200 %>
+        <% else %>
+          <%= image_tag "not_available.jpg", height: 200 %>
+        <% end %>
         <div class="card-trip-infos">
           <div>
             <%= link_to superpower.name, superpower_path(superpower), class: "btn-flat" %>
