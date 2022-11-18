@@ -15,13 +15,32 @@
 
 .navbar-custom {
   background-color: $dirty-yellow;
-  padding: 15px auto;
+  padding: 5px 10px;
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.3);
 }
 
 .navbar-brand {
   font-family: $comic-font;
   color: $dirty-red;
+  font-size: 24px;
+}
+
+form {
+  margin-left: 20px;
+}
+
+#navbarNav {
+  margin-left: 30px;
+
+  .nav-item {
+    padding: 10px;
+  }
+
+  .nav-item > a {
+    color: $muddy-font;
+    font-family: $comic-font;
+    font-size: 18px;
+  }
 }
 
 .navbar-buttons {
@@ -30,7 +49,7 @@
 
   a {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 15px;
   }
 
   p {
@@ -41,12 +60,6 @@
 
 #search-button {
   background-color: $dirty-orange;
-  margin-left: -7px;
-  border-color: none;
+  margin-left: -8px;
   border: 0;
-}
-
-.nav-item {
-  // border-radius: 8px;
-  padding: 10px;
 }

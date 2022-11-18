@@ -1,32 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
   <div class="container-fluid">
     <%= link_to(superpowers_path, class: "navbar-brand") do %>
-      OneForAll
+      <i class="fa-solid fa-hand-fist"></i> OneForAll
     <% end %>
 
     <form action="/superpowers" class="d-flex">
       <input name="q" class="form-control me-2" type="search" placeholder="Find a superpower">
       <button id="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> %>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class= "navbar-nav">
         <li class="nav-item">
-          <%= link_to "Add a Superpower", new_superpower_path, class: "btn btn-warning" %>
+          <%= link_to "Add a Superpower", new_superpower_path, class: "nav-link-custom" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Superpowers", my_superpowers_path, class: "btn btn-warning" %>
+          <%= link_to "My Superpowers", my_superpowers_path, class: "nav-link-custom" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Superpowers I've Booked", my_bookings_path, class: "btn btn-warning" %>
+          <%= link_to "Superpowers I've Booked", my_bookings_path, class: "nav-link-custom" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Superpowers I've Rented Out", my_owner_bookings_path, class: "btn btn-warning" %>
+          <%= link_to "Superpowers I've Rented Out", my_owner_bookings_path, class: "nav-link-custom" %>
         </li>
       </ul>
     </div>
+
     <div class="ms-auto navbar-buttons">
       <% if user_signed_in? %>
         <p><em>Logged in as </em><strong><%= current_user.username %></strong></p>
