@@ -46,7 +46,7 @@ Superpower.create!([
   category: "transformation",
   price_per_day: 3000,
   listed: true,
-  address: "16 Villa Gaudelet, Paris",
+  address: "Nam Van Lake, Macau",
   user: rentor
 },
 {
@@ -55,7 +55,7 @@ Superpower.create!([
   category: "superhuman",
   price_per_day: 8000,
   listed: true,
-  address: "16 Villa Gaudelet, Paris",
+  address: "Macau Tower, Macau",
   user: rentor
 },
 {
@@ -78,11 +78,11 @@ Superpower.create!([
 },
 {
   name: "Pyrokinetic",
-  description: "Feeling cold during the winter? Get the ability to be the HOT one in the room.",
+  description: "Feeling cold during the winter? Get the ability to heat up wherever you are.",
   category: "elemental",
   price_per_day: 5000,
   listed: true,
-  address: "Macau Tower, Macau",
+  address: "Guy Concordia, Montreal",
   user: rentor
 },
 {
@@ -91,7 +91,7 @@ Superpower.create!([
   category: "others",
   price_per_day: 9000,
   listed: true,
-  address: "16 Villa Gaudelet, Paris",
+  address: "5333 Casgrain, Montreal, Canada",
   user: rentor
 },
 {
