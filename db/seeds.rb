@@ -73,7 +73,7 @@ Superpower.create!([
   category: "superhuman",
   price_per_day: 5000,
   listed: true,
-  address: "16 Villa Gaudelet, Paris",
+  address: "Lille, France",
   user: rentor
 },
 {
@@ -82,7 +82,7 @@ Superpower.create!([
   category: "elemental",
   price_per_day: 5000,
   listed: true,
-  address: "16 Villa Gaudelet, Paris",
+  address: "Macau Tower, Macau",
   user: rentor
 },
 {
@@ -100,7 +100,7 @@ Superpower.create!([
   category: "others",
   price_per_day: 12000,
   listed: true,
-  address: "16 Villa Gaudelet, Paris",
+  address: "2201 Rue Leger",
   user: rentor
 }])
 
