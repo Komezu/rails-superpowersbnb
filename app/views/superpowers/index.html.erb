@@ -5,7 +5,7 @@
     <div class="cards">
       <% @superpowers.each do |superpower| %>
       <div class="card-trip <%= superpower.category %>">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <%= cl_image_tag superpower.photo.key, height: 200 %>
         <div class="card-trip-infos">
           <div>
             <%= link_to superpower.name, superpower_path(superpower), class: "btn-flat" %>

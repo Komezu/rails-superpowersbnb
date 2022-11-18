@@ -18,6 +18,11 @@
   padding: 15px auto;
 }
 
+.navbar-brand {
+  font-family: $comic-font;
+  color: $dirty-red;
+}
+
 .navbar-buttons {
   display: flex;
   align-items: center;

@@ -106,6 +106,13 @@ Superpower.create!([
 
 p "Created #{Superpower.count} superpowers."
 
+Superpower.all.each_with_index do |superpower, index|
+  file = File.open(Rails.root.join("app/assets/images/#{index}.jpg"))
+  superpower.photo.attach(io: file, filename: "#{index}.jpg", content_type: "image/jpg")
+end
+
+p "Attached photos to superpowers! 📸"
+
 Booking.create!([
 {
   start_date: Date.today,

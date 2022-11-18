@@ -18,6 +18,7 @@
     <div class="booking-details">
       <p>
         <strong>Superpower owner:</strong> <%= @booking.superpower.user.username %> (<%= @booking.superpower.user.email %>)<br>
+        <strong>Superpower location:</strong> <%= @booking.superpower.address %><br>
         <strong>Booked by:</strong> <%= @booking.user.username %> (<%= @booking.user.email %>)<br>
         <strong>From:</strong> <%= @booking.start_date %><br>
         <strong>To:</strong> <%= @booking.end_date %><br>
