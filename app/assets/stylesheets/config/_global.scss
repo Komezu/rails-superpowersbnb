@@ -6,6 +6,10 @@ $navbar-height: 74px;
   height: $navbar-height;
 }
 
+#index-title {
+  color: $muddy-font;
+}
+
 .container {
   width: 1200px;
   margin: 10px auto;
