@@ -1,7 +1,7 @@
-.booking-form-container {
+.form-container {
   width: 700px;
-  margin: 30px auto;
-  background-color: $dirty-yellow;
+  margin: 30px auto 20px auto;
+  background-color: rgba($dirty-yellow, 0.7);
   padding: 30px;
   border-radius: 3px;
   box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
@@ -9,6 +9,7 @@
 
   h3 {
     font-size: 30px;
+    font-family: $comic-font;
   }
 
   p {
@@ -24,8 +25,45 @@
     color: $muddy-font;
   }
 
+  .btn:hover {
+    border: 1px solid $dirty-yellow;
+    border-radius: 3px;
+    color: rgba($muddy-font, 0.8);
+  }
+
   .total-price {
     padding-top: 15px;
     font-size: 20px;
+  }
+}
+
+.form-footer {
+  width: 700px;
+  margin: 0 auto 30px auto;
+  text-align: right;
+
+  a {
+    color: $muddy-font;
+    font-size: 18px;
+    transition: 0.2s;
+  }
+
+  a:hover {
+    opacity: 0.7;
+    padding-right: 5px;
+  }
+}
+
+.form-other-links {
+  margin-top: 15px;
+
+  a {
+    color: $muddy-font;
+    transition: 0.2s;
+  }
+
+  a:hover {
+    opacity: 0.7;
+    padding-left: 5px;
   }
 }

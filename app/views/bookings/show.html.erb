@@ -1,26 +1,61 @@
 <div class="container">
-  <h2>Booking Details</h2>
+  <div class="top-spacer"></div>
 
-  <p><%= @booking.superpower.name %> (owned by <%= @booking.superpower.user.username %>) was booked by <%= @booking.user.username %>!</p>
-  <p>From: <%= @booking.start_date %></p>
-  <p>To: <%= @booking.end_date %></p>
-  <p>Current status: <%= @booking.status.capitalize %></p>
+  <h2 class="comic-header">Booking Details</h2>
 
-  <% if @booking.status == "pending" %>
+  <div class="booking-info">
+    <div class="superpower-card">
+      <p><i class="fa-solid fa-burst"></i> <strong>Superpower booked</strong></p>
+      <% if @booking.superpower.photo.key %>
+        <%= cl_image_tag @booking.superpower.photo.key, height: 120, width: 200, crop: :fill %>
+      <% else %>
+        <%= image_tag "not_available.jpg", height: 120, width: 200 %>
+      <% end %>
+      <p class="superpower-name"><em><%= @booking.superpower.name %></em></p>
+      <p class="superpower-description"><%= @booking.superpower.description %></p>
+    </div>
+
+    <div class="booking-details">
+      <p>
+        <strong>Superpower owner:</strong> <%= @booking.superpower.user.username %> (<%= @booking.superpower.user.email %>)<br>
+        <strong>Booked by:</strong> <%= @booking.user.username %> (<%= @booking.user.email %>)<br>
+        <strong>From:</strong> <%= @booking.start_date %><br>
+        <strong>To:</strong> <%= @booking.end_date %><br>
+        <strong>Total price:</strong> $<%= @total_price %><br>
+        <strong>Current status:</strong> <%= @booking.status %>
+      </p>
+
+      <div class="booking-status-links">
+        <% if @booking.status == "pending" %>
+          <% if @user_is_power_owner %>
+            <%= link_to(accept_booking_path(@booking), class: "accept-link") do %>
+              <i class="fa-solid fa-circle-check"></i> Accept this booking
+            <% end %>
+            <br>
+            <%= link_to(decline_booking_path(@booking), class: "decline-link") do %>
+              <i class="fa-solid fa-circle-xmark"></i> Decline this booking
+            <% end %>
+          <% else %>
+            <%= link_to(cancel_booking_path(@booking), class: "cancel-link") do %>
+              <i class="fa-solid fa-rectangle-xmark"></i> Cancel this booking
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-link">
     <% if @user_is_power_owner %>
-      <%= link_to "Accept this booking", accept_booking_path(@booking) %>
-      <%= link_to "Decline this booking", decline_booking_path(@booking) %>
+      <%= link_to(my_owner_bookings_path) do %>
+        <i class="fa-solid fa-circle-left"></i> Back
+      <% end %>
     <% else %>
-      <%= link_to "Cancel this booking", cancel_booking_path(@booking) %>
+      <%= link_to(my_bookings_path) do %>
+        <i class="fa-solid fa-circle-left"></i> Back
+      <% end %>
     <% end %>
-  <% end %>
-
-  <br>
-  <% if @user_is_power_owner %>
-    <%= link_to "Back", my_owner_bookings_path %>
-  <% else %>
-    <%= link_to "Back", my_bookings_path %>
-  <% end %>
+  </div>
 </div>
 
 <%# "Created at: #{@booking.created_at.strftime("%A, %d %b %Y %l:%M %p")}"%>

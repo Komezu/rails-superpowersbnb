@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def show
     @user_is_power_owner = @booking.user != current_user
+    @total_price = ((@booking.end_date - @booking.start_date).to_i + 1) * @booking.superpower.price_per_day
   end
 
   def new
