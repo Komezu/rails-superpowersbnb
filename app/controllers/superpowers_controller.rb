@@ -3,17 +3,23 @@ class SuperpowersController < ApplicationController
   before_action :set_superpower, only: %w[show edit update destroy toggle_availability]
 
   def index
-    if params[:q].nil?
-      @superpowers = Superpower.where(listed: true)
+    if params[:q].present?
+      sql_query = <<~SQL
+        superpowers.name ILIKE :query
+        OR superpowers.description ILIKE :query
+        OR superpowers.address ILIKE :query
+        OR superpowers.category ILIKE :query
+      SQL
+      @superpowers = Superpower.where(listed: true).where(sql_query, query: "%#{params[:q]}%")
     else
-      @superpowers = Superpower.where("name LIKE ?", "%" + params[:q] + "%").where(listed: true)
+      @superpowers = Superpower.where(listed: true)
     end
 
     @markers = @superpowers.geocoded.map do |superpower|
       {
         lat: superpower.latitude,
         lng: superpower.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {superpower: superpower}),
+        info_window: render_to_string(partial: "info_window", locals: { superpower: superpower }),
         image_url: helpers.asset_url("pow.png")
       }
     end
