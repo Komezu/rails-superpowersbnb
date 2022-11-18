@@ -78,6 +78,6 @@ class SuperpowersController < ApplicationController
   end
 
   def superpower_params
-    params.require(:superpower).permit(:name, :description, :category, :price_per_day, :listed, :photo)
+    params.require(:superpower).permit(:name, :description, :category, :price_per_day, :listed, :photo, :address)
   end
 end
