@@ -10,9 +10,9 @@ class SuperpowersController < ApplicationController
         OR superpowers.address ILIKE :query
         OR superpowers.category ILIKE :query
       SQL
-      @superpowers = Superpower.where(listed: true).where(sql_query, query: "%#{params[:q]}%")
+      @superpowers = Superpower.where(listed: true).where(sql_query, query: "%#{params[:q]}%").order(created_at: :desc)
     else
-      @superpowers = Superpower.where(listed: true)
+      @superpowers = Superpower.where(listed: true).order(created_at: :desc)
     end
 
     @markers = @superpowers.geocoded.map do |superpower|
