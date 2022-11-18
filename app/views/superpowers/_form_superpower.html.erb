@@ -1,0 +1,13 @@
+<div class="booking-form-container">
+  <h3>Add a new superpower</h3>
+
+  <%= simple_form_for(superpower) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :category, as: :select, collection: Superpower::CATEGORIES.map { |c| [c.capitalize, c] } %>
+    <%= f.input :price_per_day %>
+    <%= f.input :listed, label: "For rent right now?", as: :radio_buttons, required: true %>
+    <%= f.submit "Add Superpower", class: "btn btn-warning" %>
+  <% end %>
+</div>
