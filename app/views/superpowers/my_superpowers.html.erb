@@ -41,5 +41,9 @@
       <% end %>
     </div>
 
-  <%= link_to "Back to index", superpowers_path %>
+  <div class="back-link mt-4">
+    <%= link_to(superpowers_path) do %>
+      <i class="fa-solid fa-circle-left"></i> Back to index
+    <% end %>
+  </div>
 </div>
