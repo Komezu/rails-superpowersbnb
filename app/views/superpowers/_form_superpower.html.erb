@@ -7,6 +7,8 @@
     <%= f.input :photo, as: :file %>
     <%= f.input :category, as: :select, collection: Superpower::CATEGORIES.map { |c| [c.capitalize, c] } %>
     <%= f.input :price_per_day %>
+    <%= f.input :address, label: "Location", input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
     <%= f.input :listed, label: "For rent right now?", as: :radio_buttons, required: true %>
     <%= f.submit "Add Superpower", class: "btn btn-warning" %>
   <% end %>
