@@ -59,7 +59,7 @@ class SuperpowersController < ApplicationController
   end
 
   def my_superpowers
-    @superpowers = Superpower.where(user: current_user)
+    @superpowers = Superpower.where(user: current_user).order(:created_at)
   end
 
   def toggle_availability

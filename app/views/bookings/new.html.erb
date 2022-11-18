@@ -1,4 +1,7 @@
 <div class="container">
   <%= render "form_booking", superpower: @superpower, booking: @booking %>
-  <%= link_to "Back", superpower_path(@superpower), class: "btn btn-outline-warning" %>
+
+  <%= link_to(superpower_path(@superpower), class: "form-bottom-link") do %>
+    Back
+  <% end %>
 </div>
