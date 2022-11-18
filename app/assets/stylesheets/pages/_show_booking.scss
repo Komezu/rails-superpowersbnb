@@ -1,0 +1,102 @@
+.top-spacer {
+  height: 20px;
+}
+
+.comic-header {
+  font-family: $comic-font;
+  color: $dirty-red;
+}
+
+.booking-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  color: $muddy-font;
+}
+
+.superpower-card {
+  margin-right: 70px;
+  padding: 15px 20px;
+  background-color: ivory;
+  width: 250px;
+  border-radius: 2px;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
+
+  img {
+    display: block;
+    margin: 12px auto;
+    border-radius: 5px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .superpower-name {
+    font-size: 18px;
+    margin-bottom: 3px;
+    text-align: center;
+  }
+
+  .superpower-description {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+}
+
+.booking-details {
+  p {
+    font-size: 17px;
+    line-height: 35px;
+  }
+
+  a {
+    color: $muddy-font;
+  }
+
+  .booking-status-links {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .accept-link > i {
+    color: green;
+  }
+
+  .accept-link:hover {
+    color: green;
+  }
+
+  .decline-link > i {
+    color: red;
+  }
+
+  .decline-link:hover {
+    color: red;
+  }
+
+  .cancel-link > i {
+    color: $dirty-red;
+  }
+
+  .cancel-link:hover {
+    color: $dirty-red;
+  }
+}
+
+.back-link {
+  text-align: right;
+  margin-bottom: 30px;
+
+  a {
+    color: $dirty-red;
+    font-size: 18px;
+    transition: 0.2s;
+  }
+
+  a:hover {
+    opacity: 0.7;
+    padding-right: 5px;
+  }
+}
