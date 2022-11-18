@@ -35,7 +35,11 @@
           <span class="divider"></span>
 
           <div class="power-btn-select">
-            <div><%= link_to "Book this", new_superpower_booking_path(@superpower), class: "btn btn-dark" %></div>
+            <% if @superpower.user == current_user %>
+              <div><%= link_to "Edit this superpower", edit_superpower_path(@superpower), class: "btn btn-dark" %></div>
+            <% else %>
+              <div><%= link_to "Book this superpower", new_superpower_booking_path(@superpower), class: "btn btn-dark" %></div>
+            <% end %>
           </div>
         </div>
       </div>

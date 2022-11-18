@@ -6,9 +6,9 @@ User.destroy_all
 
 p "Database cleaned up! 👍"
 
-User.create!(email: "deku@gmail.com", username: "Deku", password: 123456)
-rentor = User.create!(email: "rentor@gmail.com", username: "that-rentor", password: 123456)
-rentee = User.create!(email: "rentee@gmail.com", username: "that-rentee", password: 123456)
+User.create!(email: "sarah@gmail.com", username: "Sarah", password: 123456)
+rentor = User.create!(email: "rentor@gmail.com", username: "super-rentor", password: 123456)
+rentee = User.create!(email: "rentee@gmail.com", username: "random-rentee", password: 123456)
 
 p "Created #{User.count} users."
 
@@ -28,7 +28,7 @@ Superpower.create!([
   category: "imperceptible",
   price_per_day: 5000,
   listed: true,
-  address: "16 Villa Gaudelet, Paris",
+  address: "Kiang Wu, Macau",
   user: rentor
 },
 {
@@ -37,7 +37,7 @@ Superpower.create!([
   category: "elemental",
   price_per_day: 2800,
   listed: true,
-  address: "16 Villa Gaudelet, Paris",
+  address: "Shinjuku, Tokyo, Japan",
   user: rentor
 },
 {
@@ -64,7 +64,7 @@ Superpower.create!([
   category: "superhuman",
   price_per_day: 10000,
   listed: true,
-  address: "16 Villa Gaudelet, Paris",
+  address: "25-29 Coventry St, London",
   user: rentor
 },
 {
@@ -100,7 +100,7 @@ Superpower.create!([
   category: "others",
   price_per_day: 12000,
   listed: true,
-  address: "2201 Rue Leger",
+  address: "2201 Rue Leger, Montreal",
   user: rentor
 }])
 
