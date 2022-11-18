@@ -16,7 +16,9 @@ $navbar-height: 74px;
 }
 
 body {
-  background-color: $background-beige;
+  background-image: linear-gradient(rgba(white,0.3), rgba(white,0.3)),url(comic.jpg);
+
+
 }
 
 a {
