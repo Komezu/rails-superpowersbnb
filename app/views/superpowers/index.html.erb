@@ -1,23 +1,26 @@
-<div class="container">
-  <h1>List of Superpowers 💥💫</h1>
+<div class="main-container">
+  <div class="container">
+    <h1>List of Superpowers 💥💫</h1>
 
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-  <div class="cards">
-    <% @superpowers.each do |superpower| %>
-    <div class="card-trip <%= superpower.category %>">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <%= link_to superpower.name, superpower_path(superpower), class: "btn-flat" %>
-          <p>Category: <%= superpower.category.capitalize %></p>
+    <div class="cards">
+      <% @superpowers.each do |superpower| %>
+      <div class="card-trip <%= superpower.category %>">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <%= link_to superpower.name, superpower_path(superpower), class: "btn-flat" %>
+            <p>Category: <%= superpower.category.capitalize %></p>
+          </div>
+            <h3 class="card-trip-pricing"><%= superpower.price_per_day %></h3>
         </div>
-          <h3 class="card-trip-pricing"><%= superpower.price_per_day %></h3>
       </div>
+      <% end %>
     </div>
-    <% end %>
+  </div>
+
+  <div id="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
