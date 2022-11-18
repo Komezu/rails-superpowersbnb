@@ -1,4 +1,4 @@
-.container{
+.container-custom{
   display: flex;
   position: relative;
   align-items: stretch;
@@ -8,7 +8,6 @@
 
 .row{
   display: flex;
-  // gap: 20px;
 }
 
 .col-6{
@@ -106,7 +105,7 @@
   margin: 20px 0;
 }
 
-/** power Button Group **/
+/** power Button select **/
 
 .power-btn-select{
   display: flex;
@@ -120,17 +119,3 @@
   font-size: 16px;
   font-weight: 500;
 }
-// .power-btn-group .btn-btn-dark{
-//   background-color: var(--accent-color);
-//   color: #fff;
-//   border: 1px solid var(--accent-color);
-//   border-radius: 4px;
-//   cursor: pointer;
-// }
-
-.power-btn-select .buy-now i{
-  font-size: 20px;
-}
-// .power-btn-group .buy-now:hover{
-//   box-shadow: 0 3px 6px var(--shadow);
-// }
