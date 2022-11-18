@@ -1,7 +1,7 @@
 .container-custom{
   display: flex;
   position: relative;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
   height: 100vh;
 }
@@ -19,7 +19,7 @@
   // // width: 1000px;
   // position: relative;
   width: 1200px;
-  margin: 10px auto;
+  margin: 20px auto;
 }
 
 /** Breadcrumb **/
@@ -50,12 +50,32 @@
   width: 100%;
 }
 
+.power {
+  background-color: $background-beige;
+  padding: 15px;
+  border-radius: 5px;
+
+  h2 {
+    font-family: $comic-font;
+  }
+
+  h3 {
+    font-family: $body-font;
+    font-size: 22px;
+  }
+
+  h4 {
+    font-family: $body-font;
+  }
+}
+
 .power-image .power-image-main{
   position: relative;
   display: block;
   height: 480px;
   // background: var(--bg-grey);
   padding: 10px;
+  padding-top: 0;
 }
 
 .power-image-main img{
