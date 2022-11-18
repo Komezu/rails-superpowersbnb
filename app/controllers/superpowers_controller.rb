@@ -3,10 +3,25 @@ class SuperpowersController < ApplicationController
   before_action :set_superpower, only: %w[show edit update destroy toggle_availability]
 
   def index
-    if params[:q].nil?
-      @superpowers = Superpower.where(listed: true)
+    if params[:q].present?
+      sql_query = <<~SQL
+        superpowers.name ILIKE :query
+        OR superpowers.description ILIKE :query
+        OR superpowers.address ILIKE :query
+        OR superpowers.category ILIKE :query
+      SQL
+      @superpowers = Superpower.where(listed: true).where(sql_query, query: "%#{params[:q]}%").order(created_at: :desc)
     else
-      @superpowers = Superpower.where("name LIKE ?", "%" + params[:q] + "%").where(listed: true)
+      @superpowers = Superpower.where(listed: true).order(created_at: :desc)
+    end
+
+    @markers = @superpowers.geocoded.map do |superpower|
+      {
+        lat: superpower.latitude,
+        lng: superpower.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { superpower: superpower }),
+        image_url: helpers.asset_url("pow.png")
+      }
     end
   end
 
@@ -44,7 +59,7 @@ class SuperpowersController < ApplicationController
   end
 
   def my_superpowers
-    @superpowers = Superpower.where(user: current_user)
+    @superpowers = Superpower.where(user: current_user).order(:created_at)
   end
 
   def toggle_availability
@@ -63,6 +78,6 @@ class SuperpowersController < ApplicationController
   end
 
   def superpower_params
-    params.require(:superpower).permit(:name, :description, :category, :price_per_day, :listed, :photo)
+    params.require(:superpower).permit(:name, :description, :category, :price_per_day, :listed, :photo, :address)
   end
 end

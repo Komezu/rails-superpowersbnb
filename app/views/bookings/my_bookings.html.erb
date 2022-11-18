@@ -1,14 +1,16 @@
 <div class="container">
-  <h2>Superpowers you've booked</h2>
+<div class="top-spacer"></div>
+  <h2 id="space-between" class="comic-header">Superpowers you've booked</h2>
 
-  <div class="cards">
-    <% @bookings.each do |booking| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-        <%= link_to booking.superpower.name, booking_path(booking) %>
-        <%= booking.start_date %>
-        <%= booking.end_date %>
-        <%= booking.status.capitalize %>
+  <div class="bookings-product">
+  <% @bookings.each do |booking| %>
+      <div class ="bookings-product-card <%= booking.superpower.category %>">
+        <p class="superpower_name"><%= link_to booking.superpower.name, booking_path(booking) %></p>
+        <p class="booking_date"><%= booking.start_date %></p>
+        <p class="booking_date"><%= booking.end_date %></p>
+        <p class="booking_status"><%= booking.status.capitalize %></p>
       </div>
-    <% end %>
+  <% end %>
   </div>
+</div>
 </div>

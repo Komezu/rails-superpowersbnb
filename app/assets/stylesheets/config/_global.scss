@@ -11,12 +11,16 @@ $navbar-height: 74px;
   margin: 10px auto;
 }
 
+body {
+  background-color: $background-beige;
+}
+
+a {
+  text-decoration: none;
+}
+
 h1 {
   margin: 25px;
   text-align: center;
   color: black;
-}
-
-body {
-  background-color: #e78e3a;
 }

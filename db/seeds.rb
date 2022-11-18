@@ -19,6 +19,7 @@ Superpower.create!([
   category: "imperceptible",
   price_per_day: 1200,
   listed: true,
+  address: "16 Villa Gaudelet, Paris",
   user: rentor
 },
 {
@@ -27,6 +28,7 @@ Superpower.create!([
   category: "imperceptible",
   price_per_day: 5000,
   listed: true,
+  address: "16 Villa Gaudelet, Paris",
   user: rentor
 },
 {
@@ -35,6 +37,7 @@ Superpower.create!([
   category: "elemental",
   price_per_day: 2800,
   listed: true,
+  address: "16 Villa Gaudelet, Paris",
   user: rentor
 },
 {
@@ -43,6 +46,7 @@ Superpower.create!([
   category: "transformation",
   price_per_day: 3000,
   listed: true,
+  address: "16 Villa Gaudelet, Paris",
   user: rentor
 },
 {
@@ -51,6 +55,7 @@ Superpower.create!([
   category: "superhuman",
   price_per_day: 8000,
   listed: true,
+  address: "16 Villa Gaudelet, Paris",
   user: rentor
 },
 {
@@ -59,6 +64,7 @@ Superpower.create!([
   category: "superhuman",
   price_per_day: 10000,
   listed: true,
+  address: "16 Villa Gaudelet, Paris",
   user: rentor
 },
 {
@@ -67,6 +73,7 @@ Superpower.create!([
   category: "superhuman",
   price_per_day: 5000,
   listed: true,
+  address: "Lille, France",
   user: rentor
 },
 {
@@ -75,6 +82,7 @@ Superpower.create!([
   category: "elemental",
   price_per_day: 5000,
   listed: true,
+  address: "Macau Tower, Macau",
   user: rentor
 },
 {
@@ -83,6 +91,7 @@ Superpower.create!([
   category: "others",
   price_per_day: 9000,
   listed: true,
+  address: "16 Villa Gaudelet, Paris",
   user: rentor
 },
 {
@@ -91,10 +100,18 @@ Superpower.create!([
   category: "others",
   price_per_day: 12000,
   listed: true,
+  address: "2201 Rue Leger",
   user: rentor
 }])
 
 p "Created #{Superpower.count} superpowers."
+
+Superpower.all.each_with_index do |superpower, index|
+  file = File.open(Rails.root.join("app/assets/images/#{index}.jpg"))
+  superpower.photo.attach(io: file, filename: "#{index}.jpg", content_type: "image/jpg")
+end
+
+p "Attached photos to superpowers! 📸"
 
 Booking.create!([
 {

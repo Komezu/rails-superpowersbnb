@@ -1,0 +1,99 @@
+.mapboxgl-popup {
+  display: none;
+  max-width: 350px !important;
+}
+
+.mapboxgl-popup-content {
+  padding: 0px !important;
+  border-radius: 10px !important;
+}
+
+.course {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.course h2 {
+  letter-spacing: 1px;
+  margin: 0px;
+  font-size: 24px;
+  padding: 3px;
+}
+
+.course h3 {
+  letter-spacing: 1px;
+  margin: 0px;
+  font-size: 18px;
+  text-transform: capitalize;
+  padding: 3px;
+}
+
+.course h6 {
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  font-size: 14px;
+  padding: 3px;
+}
+
+.course-preview {
+  color: #fff;
+  padding: 30px;
+  max-width: 150px;
+}
+
+.course-preview a {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.course-info {
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.btn-infobox-book {
+  text-decoration: none;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 13px;
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 13px;
+  right: 13px;
+  letter-spacing: 1px;
+}
+
+.btn-infobox-book:hover {
+  color: white;
+}
+
+#map {
+  max-width: 500px;
+  height: 500px;
+  width: 100%;
+  position: sticky;
+  top: 198px;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+.main-container {
+  display: flex
+}
+
+.main-container .container {
+  flex-grow: 1;
+  padding: 16px;
+}

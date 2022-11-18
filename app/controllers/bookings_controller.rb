@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def show
     @user_is_power_owner = @booking.user != current_user
+    @total_price = ((@booking.end_date - @booking.start_date).to_i + 1) * @booking.superpower.price_per_day
   end
 
   def new
@@ -22,28 +23,25 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    @bookings = Booking.where(user: current_user)
+    @bookings = Booking.where(user: current_user).order(created_at: :desc)
   end
 
   def my_owner_bookings
-    @bookings = Booking.where(superpower: current_user.superpowers)
+    @bookings = Booking.where(superpower: current_user.superpowers).order(created_at: :desc)
   end
 
   def accept
-    @booking.status = "accepted"
-    @booking.save
+    @booking.update(status: "accepted")
     redirect_to booking_path(@booking)
   end
 
   def decline
-    @booking.status = "declined"
-    @booking.save
+    @booking.update(status: "declined")
     redirect_to booking_path(@booking)
   end
 
   def cancel
-    @booking.status = "cancelled"
-    @booking.save
+    @booking.update(status: "cancelled")
     redirect_to booking_path(@booking)
   end
 

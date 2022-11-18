@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
   <div class="container-fluid">
-    <%= link_to "OneForAll", superpowers_path, class: "navbar-brand" %>
+    <%= link_to(superpowers_path, class: "navbar-brand") do %>
+      OneForAll
+    <% end %>
+
     <form action="/superpowers" class="d-flex">
       <input name="q" class="form-control me-2" type="search" placeholder="Find a superpower">
       <button id="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -26,7 +29,7 @@
     </div>
     <div class="ms-auto navbar-buttons">
       <% if user_signed_in? %>
-        <p><em>Logged in as </em><%= current_user.username %></p>
+        <p><em>Logged in as </em><strong><%= current_user.username %></strong></p>
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-warning" %>
       <% else %>
         <%= link_to "Sign In", new_user_session_path, class: "btn btn-warning" %>
@@ -35,6 +38,3 @@
     </div>
   </div>
 </nav>
-
-<%# value="Search"> %>
-<%# -custom fixed-top %>

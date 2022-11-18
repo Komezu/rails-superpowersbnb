@@ -1,4 +1,4 @@
-<div class="booking-form-container" data-controller="booking-form">
+<div class="form-container" data-controller="booking-form">
   <h3>Book <em><%= superpower.name %></em></h3>
 
   <%= simple_form_for [superpower, booking] do |f| %>
@@ -15,6 +15,6 @@
 
     <p data-booking-form-target="total"></p>
 
-    <%= f.submit class: "btn btn-warning" %>
+    <%= f.submit "Book Now", class: "btn btn-warning" %>
   <% end %>
 </div>

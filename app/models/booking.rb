@@ -10,11 +10,11 @@ class Booking < ApplicationRecord
   validates_comparison_of :start_date, greater_than_or_equal_to: Date.today
   validates_comparison_of :end_date, greater_than_or_equal_to: :start_date
 
-  before_validation :set_to_pending
+  before_validation :set_to_pending_if_no_status
 
   private
 
-  def set_to_pending
+  def set_to_pending_if_no_status
     self.status = status.nil? ? "pending" : status
   end
 end
