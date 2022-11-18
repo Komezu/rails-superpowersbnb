@@ -4,11 +4,22 @@
 
   <div class="bookings-product">
     <% @bookings.each do |booking| %>
-      <div class ="bookings-product-card <%= booking.superpower.category %>">
-        <p class="superpower_name"><%= link_to booking.superpower.name, booking_path(booking) %></p>
-        <p class="booking_date"><%= booking.start_date %></p>
-        <p class="booking_date"><%= booking.end_date %></p>
-        <p class="booking_status"><%= booking.status.capitalize %></p>
+       <div class ="bookings-product-card <%= booking.superpower.category %>">
+
+          <div class="image-card">
+             <% if booking.superpower.photo.key %>
+              <%= cl_image_tag booking.superpower.photo.key, height: 150, width: 150, crop: :fill %>
+             <% else %>
+               <%= image_tag "not_available.jpg", height: 150, width: 150 %>
+            <% end %>
+          </div>
+
+      <div class="bookings-details-card">
+        <p class="superpower-name"><%= link_to booking.superpower.name, booking_path(booking) %></p>
+        <p class="booking-date"><%= booking.start_date %></p>
+        <p class="booking-date"><%= booking.end_date %></p>
+        <p class="booking-status"><%= booking.status.capitalize %></p>
+      </div>
       </div>
     <% end %>
   </div>

@@ -1,34 +1,46 @@
 <div class="container">
-  <h2>My superpowers</h2>
+  <div class="top-spacer">
+    <h2 id="space-between" class="comic-header">My Superpowers</h2>
 
+    <div class="superpowers-product">
+      <% @superpowers.each do |superpower| %>
+        <div class ="superpowers-product-card <%= superpower.category %>">
 
-  <div class="cards">
-    <% @superpowers.each do |superpower| %>
-      <div class="card-category">
-        <%= link_to superpower.name, superpower_path(superpower) %>
+          <div class="image-card">
+            <% if superpower.photo.key %>
+              <%= cl_image_tag superpower.photo.key, height: 150, width: 150, crop: :fill %>
+            <% else %>
+              <%= image_tag "not_available.jpg", height: 150, width: 150 %>
+            <% end %>
+          </div>
 
-        <% if superpower.photo.key %>
-          <%= cl_image_tag superpower.photo.key, height: 100, width: 150, crop: :fill %>
-        <% end %>
+          <div class="superpowers-details-card">
+            <p class="superpower-name"><%= link_to superpower.name, superpower_path(superpower) %></p>
+            <p class="superpower-category"><%= superpower.category.capitalize %></p>
+            <p class="superpower-price"><%= superpower.price_per_day %></p>
 
-        <%= superpower.category.capitalize %>
+            <div class="card-links">
+            <%= link_to(toggle_availability_path(superpower)) do %>
+              <% if superpower.listed %>
+                <i class="fa-solid fa-square-check"></i> Listed
+              <% else %>
+                <i class="fa-solid fa-square-xmark"></i> Unlisted
+              <% end %>
+            <% end %>
 
-        <%= superpower.price_per_day %>
+            <%= link_to(edit_superpower_path(superpower)) do %>
+              <i class="fa-solid fa-square-pen"></i>
+            <% end %>
 
-        <%= link_to(toggle_availability_path(superpower)) do %>
-          <% if superpower.listed %>
-            <i class="fa-solid fa-square-check"></i> listed for renting
-          <% else %>
-            <i class="fa-solid fa-square-xmark"></i> unlisted
-          <% end %>
-        <% end %>
-
-        <%= link_to "Edit", edit_superpower_path(superpower) %>
-
-        <%= link_to "Delete", superpower_path(superpower), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      </div>
-    <% end %>
-  </div>
+            <%= link_to(superpower_path(superpower), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} ) do %>
+              <i class="fa-solid fa-square-minus"></i>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
   <%= link_to "Back to index", superpowers_path %>
+  </div>
 </div>
